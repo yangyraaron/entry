@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Entry.NavigationHeaderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Horizontal" d:LayoutOverrides="Height">
+        <ContentControl x:Name="Logo"
+                        Width="24"
+                        Height="16"
+                        Margin="5,2"
+                        Content="{Binding Icon}" />
+        <TextBlock x:Name="LeftHeaderText"
+                   VerticalAlignment="Center"
+                   FontFamily="{DynamicResource FontFamily}"
+                   FontSize="{DynamicResource TitleFontSize}"
+                   Text="{Binding ModuleName}"
+                   ToolTip="{Binding ModuleName}" />
+    </StackPanel>
+</UserControl>

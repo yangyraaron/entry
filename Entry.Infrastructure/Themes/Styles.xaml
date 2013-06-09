@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cal="http://www.caliburnproject.org"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="d">
+    <System:Double x:Key="FontSize">12</System:Double>
+    <System:Double x:Key="BigFontSize">14</System:Double>
+    <FontFamily x:Key="FontFamily">/Entry.Infrastructure;component/Resources/Fonts/#MS Reference Sans Serif</FontFamily>
+    <SolidColorBrush x:Key="CommonFillBrush" Color="White" />
+    <SolidColorBrush x:Key="GlassBrush" Color="#26E4E2E2" />
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#00000000" />
+    <SolidColorBrush x:Key="BorderBrush" Color="White" />
+    <SolidColorBrush x:Key="FontBrush" Color="White" />
+    <SolidColorBrush x:Key="PageIndexFontBrush" Color="Black" />
+    <FontStyle x:Key="TtitlFontStyle">Italic</FontStyle>
+    <FontWeight x:Key="TitleFontWeight">Bold</FontWeight>
+    <System:Double x:Key="TitleFontSize">16</System:Double>
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily}" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Foreground" Value="{DynamicResource FontBrush}" />
+        <Setter Property="MinHeight" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Padding" Value="2"/>
+    </Style>
+    <Style x:Key="TitleTextBlockStyle"
+           BasedOn="{StaticResource {x:Type TextBlock}}"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="{DynamicResource TitleFontSize}" />
+        <Setter Property="Padding" Value="2,0" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamily}" />
+        <Setter Property="FontStyle" Value="{DynamicResource TtitlFontStyle}" />
+        <Setter Property="FontWeight" Value="{DynamicResource TitleFontWeight}" />
+    </Style>
+    <SolidColorBrush x:Key="BrightGlassBrush" Color="#4CDEDEDE"/>
+    <SolidColorBrush x:Key="DisabledFontBrush" Color="#FF979797" />
+    <SolidColorBrush x:Key="PopBackground" Color="#FF565656" />
+    <LinearGradientBrush x:Key="DarkBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+    	<GradientStop Color="#FF727272" Offset="1"/>
+    	<GradientStop Color="#FFC6C6C6" Offset="0.004"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BrightBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFBFBFB" Offset="0"/>
+        <GradientStop Color="#FF838383" Offset="0.992"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="RedBrush" Color="#00000000"/>
+    <LinearGradientBrush x:Key="GlassBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#80FFFFFF" Offset="0"/>
+        <GradientStop Offset="0.5"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="GrayBrush" Color="#FF838383"/>
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Entry.Infrastructure;Component/Themes/Converters.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/Scrollbar.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/TreeView.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/Tooltip.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/TabControl.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/Button.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/ComboBox.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/TextBox.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/Label.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/CheckBox.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/RadioButton.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/ListBox.xaml" />
+        <ResourceDictionary Source="/Entry.Infrastructure;component/Themes/Thumb.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

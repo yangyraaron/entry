@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="Entry.ContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:controls="clr-namespace:Entry.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BorderBrush="{DynamicResource BorderBrush}"
+             BorderThickness="1"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+
+    <!--
+        <TabControl x:Name="Items" IsVisibleChanged="Items_IsVisibleChanged" Visibility="{Binding IsEmpty, Converter={StaticResource BoolVisibilityConverter}}" TabStripPlacement="Top">
+        <TabControl.ItemTemplate>
+        <DataTemplate>
+        <Grid ToolTip="{Binding Title}">
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <ContentControl Width="18"
+        Height="10"
+        Content="{Binding ModuleIcon}" />
+        <TextBlock Grid.Column="1"
+        Margin="2,0"
+        HorizontalAlignment="Left"
+        Text="{Binding Title}" />
+        <Button
+        Grid.Column="2"
+        Style="{DynamicResource CloseButtonStyle}"
+        cal:Message.Attach="CloseItem($dataContext)"/>
+        </Grid>
+        
+        
+        </DataTemplate>
+        </TabControl.ItemTemplate>
+        <TabControl.ContentTemplate>
+        <DataTemplate>
+        <ContentControl cal:View.Model="{Binding ModuleContent}" />
+        </DataTemplate>
+        </TabControl.ContentTemplate>
+        </TabControl>
+    -->
+
+    <Grid>
+
+        <!--
+            <TabControl x:Name="Items" IsVisibleChanged="Items_IsVisibleChanged" Visibility="{Binding IsEmpty, Converter={StaticResource BoolVisibilityConverter}}" TabStripPlacement="Top">
+            <TabControl.ItemTemplate>
+            <DataTemplate>
+            <Grid ToolTip="{Binding Title}">
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <ContentControl Width="18"
+            Height="10"
+            Content="{Binding ModuleIcon}" />
+            <TextBlock Grid.Column="1"
+            Margin="2,0"
+            HorizontalAlignment="Left"
+            Text="{Binding Title}" />
+            <Button
+            Grid.Column="2"
+            Style="{DynamicResource CloseButtonStyle}"
+            cal:Message.Attach="CloseItem($dataContext)"/>
+            </Grid>
+            
+            
+            </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+            <DataTemplate>
+            <ContentControl cal:View.Model="{Binding ModuleContent}" />
+            </DataTemplate>
+            </TabControl.ContentTemplate>
+            </TabControl>
+        -->
+
+        <controls:TabControlEx x:Name="Items"
+                               IsVisibleChanged="Items_IsVisibleChanged"
+                               TabStripPlacement="Top"
+                               Visibility="{Binding IsEmpty,
+                                                    Converter={StaticResource BoolVisibilityConverter}}">
+            <controls:TabControlEx.ItemTemplate>
+                <DataTemplate>
+                    <Grid ToolTip="{Binding Title}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <!--  <ColumnDefinition Width="Auto" />  -->
+                        </Grid.ColumnDefinitions>
+
+                        <ContentControl Width="18"
+                                        Height="10"
+                                        VerticalAlignment="Center"
+                                        Content="{Binding ModuleIcon}" />
+                        <TextBlock Grid.Column="1"
+                                   Margin="2,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Text="{Binding Title}" />
+                        <!--
+                            <Button
+                            Grid.Column="2"
+                            Style="{DynamicResource CloseButtonStyle}"
+                            cal:Message.Attach="CloseItem($dataContext)"/>
+                        -->
+                    </Grid>
+
+
+                </DataTemplate>
+            </controls:TabControlEx.ItemTemplate>
+            <controls:TabControlEx.ContentTemplate>
+                <DataTemplate>
+                    <ContentControl cal:View.Model="{Binding ModuleContent}" />
+                </DataTemplate>
+            </controls:TabControlEx.ContentTemplate>
+        </controls:TabControlEx>
+
+    </Grid>
+</UserControl>
